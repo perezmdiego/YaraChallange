@@ -19,7 +19,7 @@ $ sudo apt install virtualenv python3 python3-pip git-core
 $ virtualenv envName -p python3
 $ source envName/bin/activate
 $ git clone https://github.com/perezmdiego/YaraChallange.git
-$ cd YaraChallange
+$ cd YaraChallange/src
 $ pip install -r requirements.txt
 ```
 
@@ -44,6 +44,5 @@ $ curl --request POST   --url http://localhost:5000/api/rule   --header 'content
   "name": "esto no es coca papi rule", 
   "rule": "rule EstoNoEsCocaPapiRule\r\n{\r\n strings:\r\n $my_text_string = \"esto no es coca papi\"\r\n condition:\r\n   $my_text_string\r\n}"
 }
-
 ```
 

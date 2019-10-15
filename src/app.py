@@ -178,10 +178,12 @@ def analyzeFile():
 if __name__ == '__main__':
     
     logging.basicConfig(filename='info.log', level=logging.INFO)
+
     if not database_exists(DB_URL):
         create_database(DB_URL)
 
     db.init_app(app)
     db.create_all()
+
     
     app.run(host="0.0.0.0", debug=True)

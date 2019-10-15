@@ -19,8 +19,8 @@ class YaraScan(db.Model):
     result = list()
     
     def mycallback(data):
-      parser = {'rule_id':int(data['namespace']), 
-                'matched':data['matches']}
+      parser = {"rule_id":int(data["namespace"]), 
+                "matched":data["matches"]}
 
       result.append(parser)
       return yara.CALLBACK_CONTINUE

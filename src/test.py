@@ -13,7 +13,7 @@ no_es_coca_rule = {
 class TestCase(unittest.TestCase):
     def setUp(self):
 
-        db_url = 'mysql://root:''@localhost/yaratest'
+        db_url = 'mysql://root:secret@127.0.0.1:33060/yaratest'
         if not database_exists(db_url):
             create_database(db_url)
 
@@ -22,7 +22,6 @@ class TestCase(unittest.TestCase):
         app.config['WTF_CSRF_ENABLED'] = False
         app.config['SQLALCHEMY_DATABASE_URI'] = db_url
     
-
         self.app = app.test_client()
         db.init_app(app)
         db.create_all()
@@ -30,7 +29,7 @@ class TestCase(unittest.TestCase):
     def tearDown(self):
         db.session.remove()
         db.drop_all()
-        drop_database('mysql://root:''@localhost/yaratest')
+        drop_database('mysql://root:secret@127.0.0.1:33060/yaratest')
 
         
     def test_agregar_regla_yara(self):

@@ -22,8 +22,8 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
 UPLOAD_FOLDER = os.path.join(PROJECT_ROOT, 'uploads')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 DB_USER = 'root'
-DB_PASSWORD = ''
-DB_HOST = 'localhost'
+DB_PASSWORD = 'secret'
+DB_HOST = '127.0.0.1:33060'
 DB_NAME = 'yararules'
 DB_URL = 'mysql://{}:{}@{}/{}'.format(DB_USER, DB_PASSWORD, DB_HOST, DB_NAME)
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
@@ -176,11 +176,12 @@ def analyzeFile():
 
 
 if __name__ == '__main__':
-
+    
+    logging.basicConfig(filename='info.log', level=logging.INFO)
     if not database_exists(DB_URL):
         create_database(DB_URL)
 
     db.init_app(app)
     db.create_all()
-
+    
     app.run(host="0.0.0.0", debug=True)

@@ -1,0 +1,5 @@
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 196-281-466
+INFO:werkzeug:127.0.0.1 - - [15/Oct/2019 12:46:10] "GET /api/rule/all HTTP/1.1" 200 -

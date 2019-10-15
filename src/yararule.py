@@ -2,9 +2,7 @@ import flask_sqlalchemy
 
 db = flask_sqlalchemy.SQLAlchemy()
 
-
 class YaraRule(db.Model):
-
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80),  nullable=False)

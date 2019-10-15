@@ -1,7 +1,6 @@
 import os
 import json
 import logging
-
 from yararule import YaraRule, db
 from yarascan import YaraScan
 from flask import Flask, jsonify, request
@@ -177,15 +176,6 @@ def analyzeFile():
 
 
 if __name__ == '__main__':
-    logging.basicConfig(filename='info.log', level=logging.INFO)
-    """   # initialize the log handler
-    logHandler = RotatingFileHandler('info.log', maxBytes=1000, backupCount=1)
-    # set the log handler level
-    logHandler.setLevel(logging.DEBUG)
-    # set the app logger level
-    app.logger.setLevel(logging.INFO)
-    app.logger.addHandler(logHandler) """
-    db_url = 'mysql://root:''@localhost/yaratest'
 
     if not database_exists(DB_URL):
         create_database(DB_URL)

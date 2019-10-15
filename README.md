@@ -24,7 +24,7 @@ $ pip install -r requirements.txt
 ```
 
 
-## Ejecucion ⚙️
+## Ejecucion 🚀️
 
 #### 1. MySQL Docker Container
 

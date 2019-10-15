@@ -32,14 +32,6 @@ class TestCase(unittest.TestCase):
         db.drop_all()
         drop_database('mysql://root:''@localhost/yaratest')
 
-    def test_avatar(self):
-        u = YaraRule(name='john', rule='john@example.com')
-        db.session.add(u)
-        db.session.commit()
-        peter = YaraRule.query.filter_by(name='john').first()
-        
-        assert peter.name == 'john'
-
         
     def test_agregar_regla_yara(self):
         with app.test_client() as c:
@@ -76,7 +68,6 @@ class TestCase(unittest.TestCase):
         json_data = rv.get_json()
         
         assert 'False' in json_data['results']
-
 
 
 

@@ -1,0 +1,10 @@
+Click
+Flask
+Flask-MySQLdb
+itsdangerous
+Jinja2
+six
+SQLAlchemy
+SQLAlchemy-Utils
+Werkzeug
+yara-python
